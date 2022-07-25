@@ -1,0 +1,1331 @@
+@font-face {
+    font-family: 'SUIT-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'CookieRunOTF-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {font-family: "Azonix"; src: url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.eot"); src: url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.woff") format("woff"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/50cd2aad9c8f35800bb6beac3ad42f16.svg#Azonix") format("svg"); }
+
+@font-face {
+  font-family: 'Y_Spotlight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+//reset start
+body {
+  font-size: 14px;
+  line-height: 1.6;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SUIT-SemiBold';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    color: inherit;
+    font-weight: normal;
+  }
+
+  ul,
+  ol,
+  dl {
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  img {
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+  }
+
+  #root {
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0s;
+    }
+  }
+}
+body.scrollHide{
+  overflow-y: hidden;
+}
+
+//reset end
+
+.App {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.contentInner{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+//변수 선언
+:root {
+  --main-color: #000741;
+}
+
+//header start
+.headerWrap{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  padding: 0 70px;
+  transition: 0.5s;
+  background: #fff;
+  color: #222;
+}
+.headerWrap.onColor{
+  background: none;
+  color: #fff;
+  #toggle {
+    .toggleWrap{
+      .toggles{
+        background: #fff;
+      }
+    }
+  }
+}
+header {
+  width: 95%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 25;
+  #titleFont{
+    font-family: 'Azonix';
+  }
+  h1 {
+    color: inherit;
+    font-weight: bold;
+    font-size: 34px;
+  }
+    ul{
+        margin-bottom: 0em;
+        color : inherit;
+        display: flex;
+        align-items: center;
+        li{
+            position: relative;
+            font-family: 'NanumSquare';
+            font-size: 17px;
+            padding: 0 15px;
+            cursor: pointer;
+            &:nth-child(1){
+              padding-top: 10px;
+              #userImg{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                #idText{
+                  width: 100%;
+                  font-size: 10px;
+                  line-height: 15px;
+                }
+                #bgIcon{
+                  cursor: pointer;
+                  width: 100%;
+                  height: 30px;
+                  font-size: 32px;
+                  margin-bottom: 3px;
+                  svg {
+                    width: 100%;
+                  }
+                  #Icon{
+                    margin-bottom: 25px;
+                  }
+                }
+              }
+            }
+            a {
+              font-family: 'NanumSquare';
+              color : inherit;
+            }
+            &:last-child{
+                width: 70px;
+
+                display: flex;
+
+                flex-direction: column;
+            }
+        }
+    }
+}
+//header end
+
+//toggle menu start
+#subMenu{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    .subText{
+      font-family: 'Azonix';
+      padding-left: 50px;
+    }
+    li{
+        font-family: 'Azonix';
+        font-size: 40px;
+        margin: 30px 0;
+        font-weight: lighter;
+        cursor: pointer;
+        a {
+          color: #fff;
+        }
+    }
+}
+.height {
+    height: 100vh;
+}
+.bg {
+  background: #000741;
+  width: 100vw;
+  height: 100vh;
+}
+#toggle {
+  cursor: pointer;
+  width: 5%;
+  height: 100%;
+  position: relative;
+  .toggleWrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+  }
+
+}
+#toggle.on {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  .toggles{
+    background: #fff;
+  }
+}
+//toggle menu end
+
+//scrollEvent
+  .outer {
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .outer::-webkit-scrollbar {
+    display: none;
+  }
+  .inner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+  }
+  // .scrollHide {
+  //   overflow-y: hidden;
+  // }
+  //scrollEvent
+
+
+//reservetion bar start
+  #resBar{
+    position: relative;
+    height: 100%;
+    background: url(../public/images/Superior-Room_2.png) center center/cover;
+    ul{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      min-width: 1100px;
+      height: 150px;
+      background: #fff;
+      text-align: center;
+      display: flex;
+      li{
+        height: 100%;
+        line-height: 150px;
+        .num{
+          font-size: 20px;
+          font-weight: bold;
+          position: relative;
+        }
+        span{
+          padding: 0 5px;
+        }
+        &:nth-child(1){
+          width: 25%;
+          border-right: 1px solid #ccc;
+        }
+        &:nth-child(2){
+          width: 50%;
+          border-right: 1px solid #ccc;
+          position: relative;
+        }
+        &:nth-child(3){
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 25px 0;
+          position: relative;
+          width: 25%;
+          line-height: 1;
+        }
+      }
+    }
+  }
+  //reservation ber end
+
+  #cal{
+    position: absolute;
+    top: 237px;
+    left: 20%;
+    width: 560px;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+  }
+  #cal2{
+    position: absolute;
+    top: 237px;
+    right: 20%;
+    width: 560px;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+  }
+  .calIcon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #000;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  #searchBtn{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    background: #000;
+    padding: 12px 28px;
+    cursor: pointer;
+    &:hover {
+      background: #000741;
+      color: #fff;
+    }
+  }
+
+  #rooms{
+    color: #999;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    font-size: 28px;
+    font-family: 'NanumSquare';
+    &:hover{
+      color: #000741;
+    }
+    option{
+      font-size: 18px;
+      font-family: 'NanumSquare';
+      background: #fff;
+      color: #222;
+      height: 300px;
+      }
+  }
+.arrow{
+  position: relative;
+  top: 5px;
+  font-size: 24px;
+  margin-left: 8px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover{
+    opacity: 1;
+  }
+}
+#activity{
+  position: relative;
+  img{
+    height: 100vh;
+  }
+}
+#ActBg{
+  position: absolute;
+  background: rgba(0, 7, 65, 0.6);
+  width: 100vw;
+  height: 100vh;
+}
+  
+  //Rooms 스타일 start
+
+  #rooms{
+    position: relative;
+    text-align: center;
+  }
+  .roomText{
+    text-align: center;
+    font-family: 'NanumSquare';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 5;
+    h2{
+      color: inherit;
+      font-size: 130px;
+      line-height: 0;
+      margin-bottom: 70px;
+      font-family: 'Azonix';
+    }
+    span{
+      font-size: 26px;
+      font-family: 'NanumSquare';
+    }
+  }
+
+  //Rooms 스타일 end
+
+  //mainDining 스타일 start
+  #dining{
+    ul{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
+      .mainLi{
+        width: 80%;
+        .diningText{
+          display: block;
+          opacity: 1;
+        }
+      }
+      li{
+        height: 100vh;
+        width: 33.3333%;
+        overflow: hidden;
+        transition: 0.5s;
+        position: relative;
+        &:not(:last-child){
+          border-right: 3px double #fff;
+        }
+        &:hover{
+          width: 80%;
+          .diningText {
+            transition-delay: 0.5s;
+            opacity: 1;
+          }
+        }
+        .diningText {
+          opacity: 0;
+          transition: 0.5s 0s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 500px;
+          height: 300px;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 5;
+          color: #fff;
+          text-align: center;
+          h3{
+            font-size: 50px;
+            color: inherit;
+          }
+          .mainDiningText{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            p{
+              line-height: 30px;
+              margin-bottom: 0;
+              &:nth-child(3){
+                font-size: 20px;
+                padding: 4px 0;
+              }
+            }
+            span{
+              font-size: 20px;
+            }
+          }
+        }
+        img{
+          height: 100%;
+          width: auto;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  //main Dining 스타일 end
+
+  // facilities시작
+  #facilities {
+    min-width: 1200px;
+    // background-color: #000741;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    h1 {
+      width: 250px;
+      text-align: center;
+      position: absolute;
+      line-height: 60px;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 70px;
+      font-weight: bold;
+      color: #000741;
+      font-family: 'Y_Spotlight','Azonix';
+      span{
+        font-family: 'NanumSquare','Azonix';
+        font-size: 30px;
+        padding-left: 20px;
+      }
+    }
+    #f-img01 {
+      position: absolute;
+      top: 13%;
+      left: 0;
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.1);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-text {
+      position: absolute;
+      top: 52%;
+      left: 21%;
+      width: 370px;
+      height: 260px;
+      padding: 30px;
+      font-size: 18px;
+      transition: 0.5s;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      border-radius: 2px;
+      color: #444;
+      background: url('../public/images/paper.png') center bottom/cover no-repeat;
+      z-index: 5;
+      div {
+        width: 300px;
+        line-height: 40px;
+        padding-top: 50px;
+        text-align: center;
+        font-family: 'EarlyFontDiary';
+        text-shadow: 1px 1px 4px;
+      }
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img02 {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 340px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      transition: 0.5s;
+      &:hover {
+        transform: translateX(-50%) translateY(-3%)
+      }
+    }
+    #f-img03 {
+      position: absolute;
+      top: 28%;
+      right: 19%;
+      width: 310px;
+      height: 360px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img04 {
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 280px;
+      height: 280px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+    #f-img05 {
+      position: absolute;
+      top: 65%;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background-color: #ccc;
+      overflow: hidden;
+      box-shadow: 8px 8px 10px rgba(0,0,0,0.3);
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+  }
+  // facilities 끝
+
+  //reservationP start
+  .res {
+    position: relative;
+    .res-top {
+      width: 100vw;
+      height: 40vh;
+      overflow: hidden;
+      position: relative;
+      background: url('../public/images/dining_visual_05_2.png') center bottom/cover no-repeat;
+      h2{
+        font-size: 36px;
+        text-align: center;
+        color: #fff;
+        line-height: 40vh;
+      }
+    }
+    .res-confirm {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      min-height: 600px;
+      h2 {
+        font-size: 30px;
+        padding: 50px;
+        border-bottom: 3px solid #000741;
+      }
+      .mWrap {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #000741;
+        margin-bottom: 70px;
+        .member {
+          width: 50vw;
+          padding: 15px;
+          h3 {
+            font-size: 28px;
+          }
+          p {
+            width: 500px;
+            height: 60px;
+            font-size: 15px;
+            color: #555;
+          }
+          .login {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            button {
+              width: 30%;
+              outline: none;
+              border: none;
+            }
+            .lWrap {
+              width: 68%;
+              display: flex;
+              font-size: 15px;
+              flex-direction: column;
+              input {
+                color: #555;
+                line-height: 50px;
+                padding-left: 16px;
+                outline: none;
+                border: 1px solid #555;
+                background: #fff;
+                &:nth-child(1) {
+                  margin-bottom: 5px;
+                }
+              }
+              
+            }
+            
+            
+          }
+
+        }
+      }
+    }
+  }
+   //reservationP start
+
+
+  //roomDetail start
+
+  .roomDetailWrap {
+    .roomImg{
+      position: relative;
+      height: 100vh;
+      background: fixed url('../public/images/rooms/rooms_visual_3.png') center center/cover no-repeat;
+    }
+  }
+  .roomDetailBody{
+      margin-top: 200px;
+      > ul{
+        margin-bottom: 0;
+        > li{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 800px;
+          > div{
+            width: 50%;
+            height: 100%;
+            img{
+              height: 100%;
+            }
+          }
+          .roomExplain{
+            position: relative;
+            h2{
+                  text-align: center;
+                  margin-top: 30px;
+                  margin-bottom: 10px;
+                  font-size: 40px;
+                  font-family: 'Azonix';
+                  color: var(--main-color);
+                  position: relative;
+                  &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 7, 65, 0.3);
+                    width: 50%;
+                    height: 10px;
+                  }
+                }
+            ul{
+              position: absolute;
+              top: 50%;
+              left: 25%;
+              transform: translateY(-50%);
+              width: 500px;
+              li{
+                padding: 30px 0;
+                display: flex;
+                align-items: flex-start;
+                line-height: 1;
+                width: 100%;
+                h3{
+                  display: inline-block;
+                  padding-right: 30px;
+                  font-size: 24px;
+                  width: 200px;
+                  text-align: center;
+                }
+                span{
+                  font-size: 16px;
+                }
+              }
+            }
+            .roomBedType{
+              display: inline-flex;
+              align-items: flex-start;
+              justify-content: center;
+              flex-direction: column;
+              span:nth-of-type(2n+0){
+                font-size: 14px;
+                padding: 10px 0;
+              }
+            }
+          }
+          
+        }
+      }
+  }
+
+
+  //roomDetail end
+
+
+  //Footer start
+
+  footer {
+    width: 100%;
+    height: 400px;
+    background: #222;
+    transition: 0.48s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    #footerLogo {
+      font-family: 'Azonix';
+      font-size: 30px;
+    }
+    .footerNotice{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      li{
+        margin-right: 40px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+    }
+    .footerInfo{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li{
+        padding-right: 20px;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+      .footerTel{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .telNums{
+        padding-left: 20px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+    h2{
+      color: inherit;
+    }
+  }
+  footer.positioning {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+  }
+  //Footer end
+
+  //activity
+  .actMenu{
+    color: #000;
+    font-size: 20px;
+    font-family: 'NanumSquare';
+    font-weight: bold;
+  }
+#actText{
+  position: absolute;
+  z-index: 5;
+  color: #fff;
+  text-align: center;
+  top: 10%;
+  left: 50%;
+  font-size: 16px;
+  transform: translateX(-50%);
+  ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 300px;
+    width: 100vw;
+    height: 400px;
+    li{
+      overflow: hidden;
+      margin-top: 30px;
+      width: 24%;
+      background: rgb(252, 252, 252);
+      color: #555;
+      border-radius: 10px 10px 10px 10px;
+      &:hover{
+        img{
+          transform: scale(1.2);
+        }
+      }
+      .actWindow{
+        overflow: hidden;
+        // border-radius: 5px 5px 10px 10px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+
+      }
+      p{
+        line-height: 170px;
+        font-family: 'NanumSquare';
+      }
+    }
+  }
+  p{
+    margin-bottom: 10px;
+    &:nth-child(1){
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+  }
+}
+#reservation{
+  position: relative;
+}
+#blackBg{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+  //activity
+
+
+  //dining
+  #diningIndex{
+    position: relative;
+    .dinDetailTitle{
+      height: 100vh;
+      background: fixed url('../public/images/dining_visual_03_1.png') center center /cover no-repeat;
+      h2{
+        font-size: 130px;
+        line-height: 100vh;
+        text-align: center;
+        color: #fff;
+        font-family: 'Azonix';
+      }
+      span{
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: #fff;
+        font-family: 'NanumSquare';
+      }
+    }
+  }
+
+  .diningCon{
+    position: relative;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 70px;
+    h2, p , tr, td{
+      font-family: 'Pretendard';
+    }
+    h2{
+      font-weight: bold;
+      margin-top: 90px;
+      margin-bottom: 30px;
+    }
+    .gray{
+      font-size: 13px;
+      color: #aaa;
+    }
+    table{
+      text-align: center;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      td{
+        padding: 18px 0;
+        border-top: 1px solid #ccc;
+        &:nth-child(1){
+          width: 270px;
+        }
+        &:nth-child(2){
+          width: 270px;
+        }
+        &:nth-child(3){
+          width: 800px;
+        }
+        &:not(:last-child){
+          border-right: 1px solid #ccc;
+        }
+      }
+      tr{
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+  }
+
+  //sign up
+
+  .loginBox{
+    form{
+      width: 100%;
+      ul{
+        font-size: 16px;
+        width: 100%;
+        li{
+          border-bottom: 1px solid #ccc;
+          padding: 10px 0;
+          margin-top: 2px;
+          button{
+            border: none;
+            transition: 0.5s;
+            width: 130px;
+            height: 40px;
+            margin-left: 15px;
+            color: #aaa;
+            cursor: pointer;
+            background: #555;
+            &:hover{
+              color: #ddd;
+              background: #222;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .textBox{
+    text-align: left;
+    padding-left: 20px;
+    input{
+      border: 1px solid #333;
+      outline: none;
+      padding: 10px 15px 10px 15px;
+      margin-left: 10px;
+      width: 400px;
+    }
+    .radioInput{
+      width: 20px;
+      margin-right: 30px;
+    }
+    span{
+      margin-left: 20px;
+    }
+  }
+
+
+  //sign up
+
+  //topIcon
+  #TopIcon{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 50px;
+    color: inherit;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  //topIcon
+    //aboutus start
+    #brandS {
+      position: relative;
+      #brandS-top {
+        width: 100%;
+        height: 40vh;
+        background: #000741;
+        overflow: hidden;
+        background: url('../public/images/aboutus2.jpg')center bottom/cover no-repeat;
+        h2{
+          font-size: 46px;
+          text-align: center;
+          color: #fff;
+          line-height: 40vh;
+        }
+        img {
+          width: 100%;
+          height: auto;
+          transform: translateY(-25%);
+        }
+      }
+      #aboutCon {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+          #brandS-t {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 120px;
+            h1 {
+              font-size: 50px;
+              color: #000741;
+            }
+            h2 {
+              width: 1000px;
+              margin: 0 auto;
+              padding: 20px 0;
+              font-size: 36px;
+              color: #000741;
+              font-family: 'CookieRun';
+            }
+            p {
+              padding: 30px;
+              width: 1000px;
+              margin: 0 auto;
+              font-size: 18px;
+              color: #555;
+              font-family: 'CookieRun';
+            }
+          }
+          #brandS-m {
+            position: relative;
+            width: 100%;
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            #bM {
+              width: 100%;
+              position: relative;
+              #brandS-b {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                color: #fff;
+                text-shadow: 3px 3px 2px #000;
+                padding-bottom: 300px;
+                p {
+                  font-size: 21px;
+                  font-family: 'CookieRun';
+                  span {
+                    font-size: 50px;
+                    font-family: 'Azonix';
+                  }
+                }
+              }
+            }
+            #bT {
+              display: flex;
+              justify-content: space-around;
+              position: relative;
+              padding: 100px 0;
+                h2 {
+                  padding: 30px 0;
+                  margin-right: 30px;
+                  font-size: 36px;  
+                  font-family: 'CookieRun';
+                }
+                p {
+                  width: 600px;
+                  padding: 30px;
+                  font-size: 17px;
+                  font-family: 'CookieRun';
+                }
+                
+              }
+            }
+        }
+    }
+    //aboutus end
+
+    //rescheck
+
+    #res-check{
+      margin-bottom: 80px;
+      .titleRes{
+        font-size: 20px;
+      }
+      .reserListWrap{
+        li{
+          font-size: 13px;
+          span{
+            font-size: 18px;
+          }
+        }
+        ul{
+          > li{
+            padding: 7px 0;
+          }
+        }
+        > li{
+          text-align: center;
+          &:nth-child(2){
+            text-align: left;
+          }
+        }
+      }
+      > ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        align-items: center;
+        > li{
+          text-align: center;
+          width: 33.3333%;
+          padding: 20px 0;
+          img{
+            height: auto;
+            width: 300px;
+          }
+        }
+      }
+    }
+    .cancleBtn{
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+      width: 100px;
+      text-align: center;
+      transition: 0.5s;
+      &:hover{
+        background: var(--main-color);
+      }
+    }
+
+    //rescheck
+
+
+    //resPopup
+
+    .resPopup{
+      padding: 20px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      h2{
+        font-size: 26px;
+      }
+      .resBtn{
+        width: 110px;
+        height: 40px;
+        margin-top: 80px;
+        border: none;
+        outline: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+          background: var(--main-color);
+        }
+      }
+      button{
+        width: 110px;
+        height: 40px;
+        margin-top: 80px;
+        border: none;
+        outline: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+          background: var(--main-color);
+        }
+        &:first-child{
+          margin-right: 20px;
+        }
+      }
+    }
+    //resPopup
+
+    //resPopup
+
+    .empty{
+      background: #222;
+      width: 100%;
+      height: 400px;
+    }
+
+    //Calstart
+
+    .ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected {
+      color: green;
+    }
+    // .ant-picker-calendar-date-value{
+    //   color: blue;
+    // }
+
+    //Calend
+
+    //font
+      .Azonix{
+        font-family: 'Azonix';
+      }
+      .NanumSquare{
+        font-family: 'NanumSquare';
+        font-size: 17px;
+      }
+    //font
