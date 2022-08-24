@@ -15,7 +15,7 @@ const Dot = ({ num, scrollIndex }) => {
   
   const Dots = ({ scrollIndex }) => {
     return (
-      <div style={{ position: "fixed", top: "50%", left: 100, zIndex: 30, transform: 'translateY(-50%)'}}>
+      <div className='dotWrap'>
         <div
           style={{
             display: "flex",

@@ -140,7 +140,6 @@ const Index = () => {
           dispatch(setScroll(6));
         }
       }
-      console.log(deltaY)
       if (outerDivRef.current !== undefined) {
         const footer = document.querySelector('footer');
         const maxHeight = outerDivRef.current.scrollHeight;

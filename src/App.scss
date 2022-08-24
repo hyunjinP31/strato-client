@@ -270,6 +270,17 @@ header {
   //scrollEvent
 
 
+//Dots
+.dotWrap {
+  position: fixed;
+  top: 50%;
+  left: 100px;
+  z-index: 30;
+  transform: translateY(-50%);
+}
+//Dots
+
+
 //reservetion bar start
   #resBar{
     position: relative;
@@ -322,24 +333,28 @@ header {
 
   #cal{
     position: absolute;
-    top: 237px;
+    top: 180px;
     left: 20%;
-    width: 560px;
+    width: 480px;
     height: 100px;
     border-bottom: 1px solid #ccc;
   }
   #cal2{
     position: absolute;
-    top: 237px;
+    top: 180px;
     right: 20%;
-    width: 560px;
+    width: 480px;
     height: 100px;
     border-bottom: 1px solid #ccc;
+  }
+  .calClose {
+    display: none;
   }
   .calIcon{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    right: 5%;
     font-size: 30px;
     margin-left: 30px;
     cursor: pointer;
@@ -415,7 +430,22 @@ header {
   width: 100vw;
   height: 100vh;
 }
-  
+  //mainVisual
+  .mainVisualImg.mainImg1{
+      background: url('../public/images/KV1.png') center center/cover no-repeat;
+  }
+  .mainVisualImg.mainImg2{
+      background: url('../public/images/KV2.png') center center/cover no-repeat;
+  }
+  .mainVisualImg.mainImg3{
+      background: url('../public/images/KV3.png') center center/cover no-repeat;
+  }
+  .mainVisualImg.mainImg4{
+      background: url('../public/images/KV_summer_1.png') center center/cover no-repeat;
+  }
+  //mainVisual
+
+
   //Rooms 스타일 start
 
   #rooms{
@@ -1329,3 +1359,114 @@ header {
         font-size: 17px;
       }
     //font
+
+
+//모바일 반응형
+@media screen and (max-width: 768px) {
+  .headerWrap {
+    padding: 0 30px;
+  }
+  header {
+    .headerUl {
+      display: none;
+    }
+  }
+  .mainVisualImg.mainImg1 {
+    background: url('../public/images/mobileImg/hotelSlide11.png') center center/cover no-repeat;
+  }
+      
+  .mainVisualImg.mainImg2 {
+    background: url('../public/images/mobileImg/hotelSlide2.png') center center/cover no-repeat;
+  }
+  .mainVisualImg.mainImg3 {
+    background: url('../public/images/mobileImg/hotelSlide3.png') center center/cover no-repeat;
+  }
+  .mainVisualImg.mainImg4 {
+    background: url('../public/images/mobileImg/hotelSlide4.png') center center/cover no-repeat;
+  }
+  .dotWrap {
+    display: none;
+  }
+  #reservation{
+    #resBar{
+      form{
+        ul{
+        flex-direction: column;
+        min-width: 0;
+        width: 300px;
+        height: auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+          li{
+            width: 100%;
+            &:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                span{
+                  &:first-child{
+                    height: 50px;
+                    line-height: 50px;
+                  }
+                }
+            }
+            &:nth-child(3) {
+              span{
+                &:first-child{
+                  padding: 20px 0;
+                }
+              }
+          }
+            .calIcon{
+              left: 50%;
+              top: 85%;
+              transform: translateX(-50%);
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      #searchBtn{
+        top: 85%;
+      }
+    }
+    #cal{
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 35;
+      width: 90%;
+    }
+    #cal2{
+      top: 410px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 35;
+      width: 90%;
+    }
+    .calClose{
+      position: absolute;
+      right: 20px;
+      top: 4px;
+      z-index: 35;
+      display: block;
+      width: 30px;
+      height: 30px;
+      .calCloseIcon {
+        font-size: 34px;
+        color: crimson;
+      }
+    }
+    .calBlackBg{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+  
+}

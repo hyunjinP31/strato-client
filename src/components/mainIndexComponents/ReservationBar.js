@@ -58,7 +58,7 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit, onToggle,
         <form onSubmit={eventRemove}>
             <ul>
                 <li>
-                    <select name="room" id="rooms" onChange={onSetRoom} className='Azonix'>
+                    <select className="resBarRoomSel Azonix" name="room" id="rooms" onChange={onSetRoom}>
                         <option value="STANDARD" className='option Azonix'>STANDARD Room</option>
                         <option value="SUPERIOR" className='option Azonix'>SUPERIOR Room</option>
                         <option value="DELUXE" className='option Azonix'>DELUXE Room</option>
@@ -67,7 +67,7 @@ const ReservationBar = ({CalOn, onClick, addRoom, onSetRoom, onSubmit, onToggle,
                 </li>
                 <li>
                     <span>CHECK IN / OUT</span>
-                    <span><span className='num'>{addRoom.checkin}</span> - <span className='num'>{addRoom.checkout}<BsFillCalendarFill className='calIcon'  onClick={()=>onCal(!loginCheck.resCalbox)}/></span></span>
+                    <span><span className='num'>{addRoom.checkin}</span> - <span className='num'>{addRoom.checkout}</span><BsFillCalendarFill className='calIcon'  onClick={()=>onCal(!loginCheck.resCalbox)}/></span>
                 </li>
                 <li>
                     <span id='RoomNum'><span className='num Azonix'>{addRoom.room}</span></span>
