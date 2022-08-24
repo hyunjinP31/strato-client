@@ -1,1 +1,1 @@
-export const API_URL = "https://strato-server-01.herokuapp.com";
+export const API_URL = "https://strato-server-second.herokuapp.com/";
