@@ -1400,6 +1400,7 @@ header {
           li{
             width: 100%;
             &:nth-child(2) {
+              line-height: 100px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -1420,7 +1421,7 @@ header {
           }
             .calIcon{
               left: 50%;
-              top: 85%;
+              top: 88%;
               transform: translateX(-50%);
               margin-left: 0;
             }
